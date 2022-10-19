@@ -18,7 +18,7 @@ This Plugin offers a way to receieve notifications from Medusa on Ms Teams.
   {
     resolve: `medusa-plugin-teams-notification`,
      options: {
-	  show_discount_code: `<true|false>`
+	  show_discount_code: `<true|false>`,
       webhook_url: `<WEBHOOK_URL>`,
       admin_orders_url: `http://localhost:7001/a/orders`,
     }
