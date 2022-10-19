@@ -1,5 +1,33 @@
-# Plugins
+# Medusa Teams Notification Plugin
 
-Plugins offer a way to extend and integrate the core functionality of Medusa.
+This Plugin offers a way to receieve notifications from Medusa on Ms Teams.
 
-In most commerce solutions, you can extend the basic features but it often comes with the expense of having to build standalone web applications. Our architecture is built such that plugins run within the same process as the core eliminating the need for extra server capacity, infrastructure and maintenance. As a result, the plugins can use all other services as dependencies and access the database.
+
+
+## Set up Project
+
+### Prerequisites
+- Medusa Backend/Frontend/admin Setup
+- [MS Teams Webhook](https://www.youtube.com/watch?v=amvh4rzTCS0)
+
+
+### Installation
+- Clone this repo
+- Configure below paramers in backend medsa-config.js file
+```js
+  {
+    resolve: `medusa-plugin-teams-notification`,
+     options: {
+	  show_discount_code: `<true|false>`
+      webhook_url: `<WEBHOOK_URL>`,
+      admin_orders_url: `http://localhost:7001/a/orders`,
+    }
+}
+
+```
+- add local package using [npm link](https://docs.medusajs.com/advanced/backend/plugins/create/#test-your-plugin) with backend repo
+- setup REDIS_URL in projectConfig, For notification queue
+
+## Resources
+- https://docs.medusajs.com/usage/local-development/
+- https://docs.medusajs.com/advanced/backend/plugins/create/
