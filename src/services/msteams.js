@@ -92,9 +92,8 @@ class MSTeamsService extends BaseService {
                 {
                   type: "TextBlock",
                   spacing: "None",
-                  text: `${order.shipping_address.address_1}  \n  ${
-                    order.shipping_address.city
-                  }, ${order.shipping_address.country_code.toUpperCase()}`,
+                  text: `${order.shipping_address.address_1}  \n  ${order.shipping_address.city
+                    }, ${order.shipping_address.country_code.toUpperCase()}`,
                   isSubtle: true,
                   wrap: true,
                 },
@@ -201,67 +200,7 @@ class MSTeamsService extends BaseService {
             },
           ],
         },
-        {
-          type: "Container",
-          spacing: "Small",
-          padding: {
-            top: "none",
-            left: "default",
-            bottom: "none",
-            right: "default",
-          },
-          items: [
-            {
-              type: "ColumnSet",
-              columns: [
-                {
-                  type: "Column",
-                  width: "stretch",
-                  items: [
-                    {
-                      type: "Image",
-                      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Sage_logo.svg/269px-Sage_logo.svg.png",
-                      size: "Medium",
-                      width: "40px",
-                      height: "30px",
-                    },
-                  ],
-                },
-                {
-                  type: "Column",
-                  width: "stretch",
-                  items: [
-                    {
-                      type: "TextBlock",
-                      text: "Tony Zhu",
-                    },
-                  ],
-                },
-                {
-                  type: "Column",
-                  width: "stretch",
-                  items: [
-                    {
-                      type: "TextBlock",
-                      text: "PENDING",
-                      color: "Attention",
-                    },
-                  ],
-                },
-                {
-                  type: "Column",
-                  width: "stretch",
-                  items: [
-                    {
-                      type: "TextBlock",
-                      text: "10.5",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
+
       ],
       $schema: "http://adaptivecards.io/schemas/adaptive-card.json",
       version: "1.4",
@@ -278,9 +217,8 @@ class MSTeamsService extends BaseService {
       order.discounts.forEach((d) => {
         payload.body[3].facts.push({
           title: `Promo Code ${d.code}`,
-          text: `${d.rule.value}${
-            d.rule.type === "percentage" ? "%" : ` ${currencyCode}`
-          }`,
+          text: `${d.rule.value}${d.rule.type === "percentage" ? "%" : ` ${currencyCode}`
+            }`,
         });
       });
     }
