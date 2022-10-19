@@ -13,3 +13,4 @@ yarn.lock
 /models
 /subscribers
 /__mocks__
+pnpm-lock.yaml
